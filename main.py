@@ -31,7 +31,7 @@ produtos: List[Dict[str, any]] = [
 
 @app.get("/")
 def ola_mundo():
-    return {'Olá':'Pessoal'}
+    return {'Olá':'Mundo'}
 
 @app.get("/produtos")
 def listar_produtos():
