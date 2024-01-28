@@ -1,7 +1,7 @@
 from fastapi import FastAPI
 from .schema import ProdutosSchema
 from .data import Produtos
-
+from typing import List
 app = FastAPI()
 
 lista_de_produtos = Produtos()
@@ -10,7 +10,7 @@ lista_de_produtos = Produtos()
 def ola_mundo():
     return {'Olá':'Mundo'}
 
-@app.get("/produtos", response_model=list[ProdutosSchema])
+@app.get("/produtos", response_model=List[ProdutosSchema])
 def listar_produtos():
     return lista_de_produtos.listar_produtos()
 
